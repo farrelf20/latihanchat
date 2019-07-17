@@ -14,7 +14,7 @@ class Tools {
 
             var f: Float? = null
             try {
-                f = java.lang.Float.valueOf(Build.VERSION.RELEASE.substring(0, 2))
+                f = java.lang.Float.valueOf(Build.VERSION.RELEASE)
             } catch (e: NumberFormatException) {
             }
 
@@ -45,7 +45,7 @@ class Tools {
 
         @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         fun systemBarLolipop(act: Activity) {
-            if (getAPIVerison() >= 5.0) {
+            if (getAPIVerison() >= 5) {
                 val window = act.window
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
                 window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)

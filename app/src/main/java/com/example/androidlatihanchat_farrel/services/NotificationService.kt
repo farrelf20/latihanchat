@@ -1,6 +1,24 @@
 package com.example.androidlatihanchat_farrel.services
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.app.job.JobParameters
 import android.app.job.JobService
+import android.content.Context
+import android.content.Intent
+import android.support.v4.app.NotificationCompat
+import android.util.Log
+import com.example.androidlatihanchat_farrel.R
+import com.example.androidlatihanchat_farrel.activity.MainActivity
+import com.example.androidlatihanchat_farrel.data.ParseFirebaseData
+import com.example.androidlatihanchat_farrel.model.ChatMessage
+import com.example.androidlatihanchat_farrel.utilities.Const
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+
 
 class NotificationService : JobService() {
     //Todo: scheduler stops on force exit of app or reboot
